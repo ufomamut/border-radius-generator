@@ -3,7 +3,7 @@
 A small interactive tool for generating CSS `border-radius` values.  
 The project was created as a learning exercise to practice basic JavaScript, DOM manipulation, and responsive CSS.
 
-[🇨🇿 Česká verze níže](#česky)
+[🇨🇿 verze níže](#česky)
 
 ---
 
