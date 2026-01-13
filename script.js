@@ -106,11 +106,11 @@ el.resetButton.addEventListener('click', () => {
 el.copyButton.addEventListener('click', () => {
     navigator.clipboard.writeText(el.cssOutput.textContent)
         .then(() => {
-            el.copyButton.textContent = "Copied!";
+            el.copyButton.textContent = "Zkopírováno!";
             el.copyButton.classList.add('copied');
 
             setTimeout(() => {
-                el.copyButton.textContent = "Copy to clipboard";
+                el.copyButton.textContent = "Zkopírovat do schránky";
                 el.copyButton.classList.remove('copied');
             }, 1200);
         });
