@@ -1,0 +1,240 @@
+/* ==================================================
+   FONTS
+   ================================================== */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ==================================================
+   CSS VARIABLES
+   ================================================== */
+:root {
+    --bg-color: #2d3436;
+    --text-main: #ffffff;
+    --accent: #0d88aac9;
+    --success: #00b894;
+
+    --rect-bg: rgba(150, 220, 255, 0.3);
+    --rect-active: rgba(150, 220, 255, 0.8);
+
+    --radius-main: 20px;
+    --space-sm: 0.75rem;
+    --space-md: 1.2rem;
+    --space-lg: 2rem;
+
+    --font-base: 1rem;
+}
+
+/* ==================================================
+   RESET
+   ================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: var(--font-base);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--space-md);
+}
+
+/* ==================================================
+   LAYOUT
+   ================================================== */
+.card {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--text-main);
+    border-radius: var(--radius-main);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+/* ==================================================
+   HEADER
+   ================================================== */
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.header p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* ==================================================
+   RECTANGLE PREVIEW
+   ================================================== */
+.preview {
+    display: flex;
+    justify-content: center;
+}
+
+.rectangle {
+    width: min(260px, 80vw);
+    aspect-ratio: 1 / 1;
+    background: var(--rect-bg);
+    border: 1px solid var(--text-main);
+    border-radius: 50px;
+    transition:
+        border-radius 0.2s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.rectangle.active {
+    background-color: var(--rect-active);
+    box-shadow: 0 0 20px var(--rect-active);
+}
+
+/* ==================================================
+   CSS CODE OUTPUT
+   ================================================== */
+.output-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--text-main);
+    border-radius: var(--radius-main);
+    padding: var(--space-sm);
+    text-align: center;
+}
+
+.output-row code {
+    font-family: monospace;
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+/* ==================================================
+   BUTTONS
+   ================================================== */
+.btn {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    border-radius: 10px;
+    padding: 0.6em 1em;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-copy.copied {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: #fff;
+}
+
+/* ==================================================
+   CONTROLS
+   ================================================== */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+fieldset {
+    border: 1px solid var(--text-main);
+    border-radius: var(--radius-main);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+legend {
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.corner-symbol {
+    font-size: 1.3rem;
+    min-width: 1.5em;
+    text-align: center;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 5px;
+    background: var(--text-main);
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+span[id$="-value"] {
+    min-width: 48px;
+    text-align: right;
+    font-size: 0.85rem;
+}
+
+/* ==================================================
+   DESKTOP
+   ================================================== */
+@media (min-width: 768px) {
+    .card {
+        max-width: 500px;
+    }
+
+    .rectangle {
+        width: 300px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+}

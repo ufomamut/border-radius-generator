@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radius generator - Basic application written in vanilla JavaScript.">
+    <meta name="author" content="Michal Socha - Ufomamut">
+    
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Border Radius Generator</title>
+</head>
+
+<body>
+    <main class="card">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>Border Radius Generator</h1>
+            <p>
+                Vizuální nástroj pro generování hodnot kulatých rohů
+            </p>
+        </header>
+
+        <!-- RECTANGLE PREVIEW -->
+        <section class="preview">
+            <div class="rectangle"></div>
+        </section>
+
+        <!-- CSS CODE OUTPUT -->
+        <section class="output-row">
+            <code id="cssOutput">border-radius: 50px 50px 50px 50px;</code>
+            <button id="copyBtn" class="btn btn-copy" type="button">
+                Zkopírovat do schránky
+            </button>
+        </section>
+
+        <!-- CONTROLS - SLIDERS -->
+        <section class="controls">
+
+            <fieldset>
+                <legend>Nastavení rohů</legend>
+
+                <div class="box">
+                    <span class="corner-symbol">↖</span>
+                    <input type="range" id="lt" min="0" max="150" step="1" value="50">
+                    <span id="lt-value">75px</span>
+                </div>
+
+                <div class="box">
+                    <span class="corner-symbol">↗</span>
+                    <input type="range" id="rt" min="0" max="150" step="1" value="50">
+                    <span id="rt-value">75px</span>
+                </div>
+
+                <div class="box">
+                    <span class="corner-symbol">↙</span>
+                    <input type="range" id="lb" min="0" max="150" step="1" value="50">
+                    <span id="lb-value">75px</span>
+                </div>
+
+                <div class="box">
+                    <span class="corner-symbol">↘</span>
+                    <input type="range" id="rb" min="0" max="150" step="1" value="50">
+                    <span id="rb-value">75px</span>
+                </div>
+            </fieldset>
+
+            <button class="btn" type="button" id="resetBtn">
+                Reset
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
